@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WolfCon Gaming Convention</title>
+    <link rel="icon" href="img/wolfconFav.svg" type="image/svg+xml" sizes="16x16">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+<body ng-app="mainApp" layout="column" ng-cloak class="customBackground">
+
+<div ng-controller="MenuCtrl" class="container">
+    
+
+
+    <md-toolbar class="" layout-align="center center" layout="row" >
+                                <!--Dialog.js-->
+        <div ng-controller="DialogController" class="fablogin">
+            <md-icon ng-click="loginDialog($event)" md-svg-icon="img/login.svg" class="black"></md-icon>
+        </div>
+
+
+
+        <md-button ng-click="toggleLeft()" class="" hide-gt-sm aria-label="Settings">
+            <md-icon md-svg-icon="img/menu.svg" class="white"></md-icon>
+        </md-button>
+
+        <section layout="row" layout-align="center center">
+
+                <md-button href="#/" class="md-title md-whiteframe-1dp" >
+                      WolfCon
+                </md-button>
+
+                <md-icon md-svg-src="img/wolfcon.svg" aria-label="WolfCon">
+
+                </md-icon>
+        <div ng-controller="AppController">
+                <md-button
+                        ng-click="registrationDialog($event)"
+                        aria-label="Registration"
+                       class="md-whiteframe-1dp"
+                        >
+                    Registration
+                </md-button>
+        </div>
+
+
+
+
+        </section>
+        
+
+    </md-toolbar>
+        
+
+
+    <md-toolbar hide show-gt-sm class="partners" ng-controller="LeftCtrl" ng-hide="showMenu">
+
+
+        <section layout-align="center center" layout="row" layout-xs="column">
+
+            <md-button class="md-raised md-primary" ng-click="menuShowHide()">
+                Be a Partner
+            </md-button>
+
+        </section>
+    </md-toolbar>
+
+    <md-toolbar hide show-gt-sm class="partners" ng-controller="LeftCtrl" ng-show="showMenu">
+
+
+
+        <md-icon md-svg-icon="img/arrow_back.svg" class="white" ng-click="menuShowHide()"></md-icon>
+        <section layout-align="center center" layout="row" layout-xs="column">
+
+
+
+            <md-button class="md-raised md-primary" href="#/bizarre" aria-label="Bizarre">
+                Bizarre
+            </md-button>
+            <md-button class="md-raised md-primary" href="#/marketing" aria-label="Marketing">
+                Marketing
+            </md-button>
+            <md-button class="md-raised md-primary" href="#/event" aria-label="Event">
+                Event
+            </md-button>
+            <md-button class="md-raised md-primary" href="#/vendor" aria-label="Vendor">
+                Vendor
+            </md-button>
+            <md-button class="md-raised md-primary" href="#/sponsor" aria-label="Sponsor">
+                Sponsor
+            </md-button>
+        </section>
+
+    </md-toolbar>
+</div>
+
+
+<!-- PARTNERS MENU SMALL SCREEN -->
+    <div class="container" layout="row" ng-cloak>
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="false">
+                <section layout-align="center center" layout="column" ng-controller="LeftCtrl">
+                    <md-button class="md-raised md-primary" href="#/bizarre" aria-label="Bizarre" ng-click="close()">
+                        Bizarre
+                    </md-button>
+                    <md-button class="md-raised md-primary" href="#/marketing" aria-label="Marketing" ng-click="close()">
+                        Marketing
+                    </md-button>
+                    <md-button class="md-raised md-primary" href="#/event" aria-label="Event" ng-click="close()">
+                        Event
+                    </md-button>
+                    <md-button class="md-raised md-primary" href="#/vendor" aria-label="Vendor" ng-click="close()">
+                        Vendor
+                    </md-button>
+                    <md-button class="md-raised md-primary" href="#/sponsor" aria-label="Sponsor" ng-click="close()">
+                        Sponsor
+                    </md-button>
+                </section>
+            </md-sidenav>
+
+            <md-content layout-padding layout-margin layout="row" layout-wrap>
+                <div flex="5" hide show-gt-sm></div>
+                <div  class="page {{ pageClass }}" ng-view layout-padding flex="90"></div>
+                <div flex="5" hide show-gt-sm></div>
+            </md-content>
+
+    </div>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+<script src="bower_components/svg-injector/dist/svg-assets-cache.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+
+<script src="js/app.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/registration.js"></script>
+<script src="js/partnermenu.js"></script>
+<script src="js/login/login.js"></script>
+<script src="js/login/dialog.js"></script>
+<script src="js/login/authenticationService.js"></script>
+<script src="js/login/fakeUserService.js"></script>
+<script src="js/login/userService.js"></script>
+<script src="js/mdtheming.js"></script>
+
+
+</body>
+</html>
