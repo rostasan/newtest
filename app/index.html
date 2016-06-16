@@ -13,66 +13,50 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/animation.css">
 </head>
-<body ng-app="mainApp" layout="column" ng-cloak class="customBackground">
+<body ng-app="mainApp" layout="column" ng-cloak class="background">
 
-<div ng-controller="MenuCtrl" class="container">
+<div ng-controller="MenuCtrl">
     
 
 
-    <md-toolbar class="" layout-align="center center" layout="row" >
-                                <!--Dialog.js-->
-        <div ng-controller="DialogController" class="fablogin">
-            <md-icon ng-click="loginDialog($event)" md-svg-icon="img/login.svg" class="black"></md-icon>
+    <md-toolbar class="transparent-background" layout-align="center center" layout="row" >
+<!--Dialog.js-->
+        <div ng-controller="DialogController">
+            <md-icon ng-click="loginDialog($event)" md-svg-icon="img/login.svg"></md-icon>
         </div>
-
-
-
-        <md-button ng-click="toggleLeft()" class="" hide-gt-sm aria-label="Settings">
+        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-sm aria-label="Settings">
             <md-icon md-svg-icon="img/menu.svg" class="white"></md-icon>
         </md-button>
-
         <section layout="row" layout-align="center center">
-
-                <md-button href="#/" class="md-title md-whiteframe-1dp" >
+                <md-button href="#/" class="md-raised md-whiteframe-5dp" >
                       WolfCon
                 </md-button>
-
                 <md-icon md-svg-src="img/wolfcon.svg" aria-label="WolfCon">
-
                 </md-icon>
-        <div ng-controller="AppController">
-                <md-button
-                        ng-click="registrationDialog($event)"
-                        aria-label="Registration"
-                       class="md-whiteframe-1dp"
-                        >
-                    Registration
-                </md-button>
-        </div>
-
-
-
-
+            <div ng-controller="AppController">
+                    <md-button
+                            ng-click="registrationDialog($event)"
+                            aria-label="Registration"
+                           class="md-primary md-raised md-whiteframe-1dp"
+                            >
+                        Registration
+                    </md-button>
+            </div>
         </section>
-        
-
     </md-toolbar>
         
 
 
-    <md-toolbar hide show-gt-sm class="partners" ng-controller="LeftCtrl" ng-hide="showMenu">
-
-
+    <md-toolbar hide show-gt-sm class="transparent-background" ng-controller="LeftCtrl" ng-hide="showMenu">
         <section layout-align="center center" layout="row" layout-xs="column">
-
-            <md-button class="md-raised md-primary" ng-click="menuShowHide()">
+            <md-button class="md-raised md-primary md-whiteframe-5dp" ng-click="menuShowHide()">
                 Be a Partner
             </md-button>
-
         </section>
     </md-toolbar>
 
-    <md-toolbar hide show-gt-sm class="partners" ng-controller="LeftCtrl" ng-show="showMenu">
+
+    <md-toolbar class="transparent-background" hide show-gt-sm class="partners" ng-controller="LeftCtrl" ng-show="showMenu">
 
 
 
@@ -103,8 +87,8 @@
 
 
 <!-- PARTNERS MENU SMALL SCREEN -->
-    <div class="container" layout="row" ng-cloak>
-            <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="false">
+    <div layout="row" ng-cloak>
+            <md-sidenav class="md-sidenav-left transparent-sidenav-background" md-component-id="left" md-is-locked-open="false">
                 <section layout-align="center center" layout="column" ng-controller="LeftCtrl">
                     <md-button class="md-raised md-primary" href="#/bizarre" aria-label="Bizarre" ng-click="close()">
                         Bizarre
@@ -124,7 +108,7 @@
                 </section>
             </md-sidenav>
 
-            <md-content layout-padding layout-margin layout="row" layout-wrap>
+            <md-content layout="row" layout-wrap>
                 <div flex="5" hide show-gt-sm></div>
                 <div  class="page {{ pageClass }}" ng-view layout-padding flex="90"></div>
                 <div flex="5" hide show-gt-sm></div>

@@ -1,6 +1,6 @@
-* {
-    box-sizing: border-box;
-}
+/** {*/
+/*box-sizing: border-box;*/
+/*}*/
 
 .message {
     color: red;
@@ -34,5 +34,21 @@
 .page.ng-enter.ng-enter-active {
     opacity: 1;
     transform: translate(0px);
+
+}
+.background {
+    background-image: url("../img/horseheadir_hubble.jpg");
+    background-repeat: no-repeat;
+
+    background-position: top;
+
+
+}
+.transparent-background {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+
+}
+.transparent-sidenav-background {
+    background-color: rgba(0, 0, 0, 0) !important;
 
 }
